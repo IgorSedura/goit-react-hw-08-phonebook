@@ -5,6 +5,6 @@ const instance = axios.create({
 });
 
 export const singup = async data => {
-  const { data: result } = await instance.post('/users', data);
+  const { data: result } = await instance.post('/users/signup', data);
   return result;
 };

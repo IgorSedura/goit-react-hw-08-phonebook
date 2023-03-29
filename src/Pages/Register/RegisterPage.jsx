@@ -1,9 +1,15 @@
-import LoginArea from 'components/RegisterForm/register';
+import LoginForm from 'components/RegisterForm/register';
+import { useDispatch } from 'react-redux';
+import { singup } from 'redux/auth/auth-operations';
 
 const RegisterPage = () => {
+  const dispatch = useDispatch();
+  const onRegister = data => {
+    dispatch(singup(data));
+  };
   return (
     <div>
-      <LoginArea />
+      <LoginForm onSubmit={onRegister} />
     </div>
   );
 };
