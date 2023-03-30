@@ -4,7 +4,7 @@ import { Container } from './AppStyled';
 
 import { Home } from 'Pages/Home/home';
 
-const NavBar = lazy(() => import('./NavBar/Navbar'));
+const NavBar = lazy(() => import('./Navbar/Navbar'));
 const Contacts = lazy(() => import('./Contacts/Contacts'));
 const LoginPage = lazy(() => import('Pages/LogIn/LoginPage'));
 const RegisterPage = lazy(() => import('Pages/Register/RegisterPage'));

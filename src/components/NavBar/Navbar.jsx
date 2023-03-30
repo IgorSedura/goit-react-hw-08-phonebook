@@ -1,20 +1,30 @@
 import { Header, Link } from './NavBarStyles';
+import NavbarUser from './NavbarUser/NavbarUser';
+import useAuth from 'shared/useAuth';
 
-const NavBar = () => {
+const NavbarAuth = () => {
+  return (
+    <nav>
+      <div>
+        <Link to="/register" end>
+          Register
+        </Link>
+
+        <Link to="/login">Log In </Link>
+      </div>
+    </nav>
+  );
+};
+
+const Navbar = () => {
+  const isLogin = useAuth();
   return (
     <Header>
       <Link to="/"> Home</Link>
-      <nav>
-        <div>
-          <Link to="/register" end>
-            Register
-          </Link>
-
-          <Link to="/login">Log In </Link>
-        </div>
-      </nav>
+      {!isLogin && <NavbarAuth />}
+      {isLogin && <NavbarUser />}
     </Header>
   );
 };
 
-export default NavBar;
+export default Navbar;
