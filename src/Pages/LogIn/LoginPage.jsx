@@ -1,28 +1,29 @@
-import RegisterForm from 'components/RegisterForm/registerForm';
+import LoginForm from 'components/LoginForm/loginForm';
 import { useDispatch, useSelector } from 'react-redux';
-import { singup } from 'redux/auth/auth-operations';
+import { login } from 'redux/auth/auth-operations';
 import { getAuthError, isAuth } from 'redux/auth/auth-selector';
 import toast, { Toaster } from 'react-hot-toast';
 import { Navigate } from 'react-router-dom';
 
-const RegisterPage = () => {
+const LoginPage = () => {
   const dispatch = useDispatch();
   const { status, statusText } = useSelector(getAuthError);
   const isLogin = useSelector(isAuth);
 
-  const onRegister = data => {
-    dispatch(singup(data));
+  const onLogin = data => {
+    dispatch(login(data));
   };
   if (isLogin) {
     return <Navigate to="/contacts" />;
   }
   return (
     <div>
-      <RegisterForm onSubmit={onRegister} />
+      <LoginForm onSubmit={onLogin} />
       {status && toast.error(`oops ${statusText}`)}
+
       <Toaster />
     </div>
   );
 };
 
-export default RegisterPage;
+export default LoginPage;

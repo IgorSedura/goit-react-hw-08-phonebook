@@ -18,11 +18,9 @@ const LoginHeader = () => {
   );
 };
 
-const LoginForm = ({ onSubmit }) => {
+const RegisterForm = ({ onSubmit }) => {
   const [state, setState] = useState({ ...initialState });
-
   const handleChange = ({ target }) => {
-    console.log(target);
     const { value, name } = target;
     setState(prevState => ({
       ...prevState,
@@ -102,4 +100,4 @@ const LoginForm = ({ onSubmit }) => {
   );
 };
 
-export default LoginForm;
+export default RegisterForm;

@@ -17,7 +17,6 @@ export const FormAddContact = ({ onSubmit }) => {
 
   const handleChange = ({ target }) => {
     const { value, name } = target;
-    console.log(value);
     setState(prevState => ({
       ...prevState,
       [name]: value,

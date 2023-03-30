@@ -5,8 +5,8 @@ import { Container } from './AppStyled';
 import { Home } from 'Pages/Home/home';
 
 const NavBar = lazy(() => import('./NavBar/Navbar'));
-
-const LogIn = lazy(() => import('Pages/LogIn/logIn'));
+const Contacts = lazy(() => import('./Contacts/Contacts'));
+const LoginPage = lazy(() => import('Pages/LogIn/LoginPage'));
 const RegisterPage = lazy(() => import('Pages/Register/RegisterPage'));
 
 export const App = () => {
@@ -17,7 +17,8 @@ export const App = () => {
         <Routes>
           <Route index element={<Home />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LogIn />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/contacts" element={<Contacts />} />
         </Routes>
       </Suspense>
     </Container>

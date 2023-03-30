@@ -20,7 +20,7 @@ import { addContact, removeContact } from 'redux/contacts-operations';
 import { Search2Icon } from '@chakra-ui/icons';
 import { fetchContacts } from 'redux/contacts-operations';
 
-export const Contacts = () => {
+const Contacts = () => {
   const contacts = useSelector(getFilterContacts);
 
   const dispatch = useDispatch();
@@ -70,3 +70,5 @@ export const Contacts = () => {
     </Container>
   );
 };
+
+export default Contacts;
