@@ -9,7 +9,7 @@ import { current } from 'redux/auth/auth-operations';
 
 import { Home } from 'Pages/Home/home';
 
-const Navbar = lazy(() => import('./Navbar/Navbar'));
+const NavBar = lazy(() => import('./NavBar/NavBar'));
 const Contacts = lazy(() => import('./Contacts/Contacts'));
 const LoginPage = lazy(() => import('Pages/LogIn/LoginPage'));
 const RegisterPage = lazy(() => import('Pages/Register/RegisterPage'));
@@ -24,7 +24,7 @@ export const App = () => {
   return (
     <Container>
       <Suspense>
-        <Navbar />
+        <NavBar />
         <Routes>
           <Route index element={<Home />} />
           <Route element={<PublicRoute />}>

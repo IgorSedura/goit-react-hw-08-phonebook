@@ -3,7 +3,7 @@ import NavbarUser from '../NavbarUser/NavbarUser';
 import useAuth from 'shared/useAuth';
 import NavbarAuth from '../NavbarAuth/NavbarAuth';
 
-const Navbar = () => {
+const NavBar = () => {
   const isLogin = useAuth();
   return (
     <Header>
@@ -14,4 +14,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;
