@@ -1,16 +1,39 @@
 import { Header, Link } from './NavBarStyles';
-import NavbarUser from '../NavbarUser/NavbarUser';
+
 import useAuth from '../../shared/useAuth';
-import NavbarAuth from '../NavbarAuth/NavbarAuth';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { getUser } from 'redux/auth/auth-selector';
+import { logout } from 'redux/auth/auth-operations';
 
 const NavBar = () => {
+  const { name } = useSelector(getUser);
+  const dispatch = useDispatch();
+
+  const onLogout = () => dispatch(logout());
   const isLogin = useAuth();
   return (
     <Header>
+      <nav>
+        <div>
+          <Link to="/register" end>
+            Register
+          </Link>
+
+          <Link to="/login">Log In </Link>
+        </div>
+      </nav>
       <Link to="/"> Home</Link>
       <nav>
-        {!isLogin && <NavbarAuth />}
-        {isLogin && <NavbarUser />}
+        {isLogin && (
+          <div>
+            <span>{name}</span> |
+            <button onClick={onLogout} type="button">
+              {' '}
+              Logout
+            </button>
+          </div>
+        )}
       </nav>
     </Header>
   );
