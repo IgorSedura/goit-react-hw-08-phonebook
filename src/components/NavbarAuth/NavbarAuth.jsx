@@ -1,4 +1,4 @@
-import { Link } from '../NavBarStyles';
+import { Link } from '../Navbar/NavBarStyles';
 
 export const NavbarAuth = () => {
   return (
