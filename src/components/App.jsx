@@ -9,7 +9,7 @@ import { current } from 'redux/auth/auth-operations';
 
 import { Home } from 'Pages/Home/home';
 
-const NavBar = lazy(() => import('./NavBar/NavBar'));
+const NavBar = lazy(() => import('./Navbars/NavBar'));
 const Contacts = lazy(() => import('./Contacts/Contacts'));
 const LoginPage = lazy(() => import('Pages/LogIn/LoginPage'));
 const RegisterPage = lazy(() => import('Pages/Register/RegisterPage'));
