@@ -1,6 +1,6 @@
 import { Link } from '../Navbar/NavBarStyles';
 
-export const NavbarAuth = () => {
+const NavbarAuth = () => {
   return (
     <nav>
       <div>
@@ -13,3 +13,5 @@ export const NavbarAuth = () => {
     </nav>
   );
 };
+
+export default NavbarAuth;
