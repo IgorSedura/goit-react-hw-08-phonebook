@@ -8,8 +8,10 @@ const NavBar = () => {
   return (
     <Header>
       <Link to="/"> Home</Link>
-      {!isLogin && <NavbarAuth />}
-      {isLogin && <NavbarUser />}
+      <nav>
+        {!isLogin && <NavbarAuth />}
+        {isLogin && <NavbarUser />}
+      </nav>
     </Header>
   );
 };
