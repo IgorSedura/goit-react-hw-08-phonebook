@@ -1,6 +1,6 @@
 import { Header, Link } from './NavBarStyles';
 import NavbarUser from '../NavbarUser/NavbarUser';
-import useAuth from 'shared/useAuth';
+import useAuth from '../../shared/useAuth';
 import NavbarAuth from '../NavbarAuth/NavbarAuth';
 
 const NavBar = () => {
