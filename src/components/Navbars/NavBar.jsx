@@ -22,9 +22,9 @@ const NavBar = () => {
 
           <Link to="/login">Log In </Link>
         </div>
-      </nav>
-      <Link to="/"> Home</Link>
-      <nav>
+
+        <Link to="/"> Home</Link>
+
         {isLogin && (
           <div>
             <span>{name}</span> |
