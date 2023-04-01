@@ -12,10 +12,12 @@ import { BsJournalBookmark } from 'react-icons/bs';
 export const Home = () => {
   return (
     <>
-      <Card mt="3" mb="6">
+      <Card mt="1" mb="6">
         <CardBody>
           <Center>
-            <Heading mb="5">Phonebook </Heading>
+            <Heading mb="5" size="4xl">
+              Phonebook
+            </Heading>
           </Center>
           <Center mb={4}>
             <BsJournalBookmark size={200} />
