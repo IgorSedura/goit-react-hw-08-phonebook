@@ -41,7 +41,7 @@ const RegisterForm = ({ onSubmit }) => {
   return (
     <Flex
       alignItems="flex-start"
-      minHeight="100vh"
+      minHeight="85vh"
       width="full"
       align="center"
       justifyContent="center"

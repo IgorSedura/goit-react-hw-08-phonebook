@@ -9,6 +9,7 @@ import { current } from 'services/auth';
 
 import { Home } from 'Pages/Home/home';
 import useAuth from 'shared/useAuth';
+import { Copyright } from './Copyright/Copyright';
 
 const NavBar = lazy(() => import('./Navbars/NavBar'));
 const Contacts = lazy(() => import('./Contacts/Contacts'));
@@ -40,6 +41,7 @@ export const App = () => {
             </Route>
           </Routes>
         </Suspense>
+        <Copyright />
       </Container>
     )
   );
