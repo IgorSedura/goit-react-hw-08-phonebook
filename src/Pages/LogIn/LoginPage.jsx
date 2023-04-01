@@ -17,7 +17,6 @@ const LoginPage = () => {
     <div>
       <LoginForm onSubmit={onLogin} />
       {status && toast.error(`oops ${statusText}`)}
-
       <Toaster />
     </div>
   );

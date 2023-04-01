@@ -1,4 +1,4 @@
-import { Header, Link } from './NavBarStyles';
+import { Header, Link, Text } from './NavBarStyles';
 
 import useAuth from '../../shared/useAuth';
 
@@ -15,23 +15,26 @@ const NavBar = () => {
   return (
     <Header>
       <nav>
-        <div>
-          <Link to="/register" end>
-            Register
-          </Link>
-
-          <Link to="/login">Log In </Link>
-        </div>
-
         <Link to="/"> Home</Link>
+
+        <div>
+          {!isLogin && (
+            <>
+              <Link to="/register" end>
+                Register
+              </Link>
+
+              <Link to="/login">Log In </Link>
+            </>
+          )}
+        </div>
 
         {isLogin && (
           <div>
-            <span>{name}</span> |
-            <button onClick={onLogout} type="button">
-              {' '}
-              Logout
-            </button>
+            <Text>
+              Welcom <b>{name}</b>
+            </Text>
+            <Link onClick={onLogout}>Logout</Link>
           </div>
         )}
       </nav>

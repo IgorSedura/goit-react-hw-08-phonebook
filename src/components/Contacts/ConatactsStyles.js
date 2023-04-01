@@ -5,6 +5,10 @@ export const Container = styled.div`
   flex-direction: row;
   align-items: baseline;
   justify-content: space-around;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const InputSearch = styled.div`

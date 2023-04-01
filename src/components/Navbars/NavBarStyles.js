@@ -2,9 +2,6 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Header = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 12px;
   padding: 8px 0;
   margin-bottom: 16px;
@@ -12,14 +9,14 @@ export const Header = styled.header`
 
   nav {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 `;
 
-export const Logo = styled.p`
-  font-weight: 700;
-  margin: 0;
+export const Text = styled.span`
+  margin-right: 20px;
 `;
-
 export const Link = styled(NavLink)`
   padding: 8px 16px;
   border-radius: 4px;

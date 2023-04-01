@@ -6,6 +6,8 @@ import {
   FormLabel,
   Input,
   Button,
+  InputGroup,
+  InputRightElement,
 } from '@chakra-ui/react';
 import { initialState } from './initialState';
 import { useState } from 'react';
@@ -19,6 +21,8 @@ const LoginHeader = () => {
 };
 
 const RegisterForm = ({ onSubmit }) => {
+  const [show, setShow] = useState(false);
+  const handleClick = () => setShow(!show);
   const [state, setState] = useState({ ...initialState });
   const handleChange = ({ target }) => {
     const { value, name } = target;
@@ -80,13 +84,20 @@ const RegisterForm = ({ onSubmit }) => {
               </FormControl>
               <FormControl mt={4}>
                 <FormLabel>Password</FormLabel>
-                <Input
-                  onChange={handleChange}
-                  name="password"
-                  value={password}
-                  type="password"
-                  placeholder="Enter your password"
-                />
+                <InputGroup size="md">
+                  <Input
+                    onChange={handleChange}
+                    name="password"
+                    value={password}
+                    type={show ? 'text' : 'password'}
+                    placeholder="Enter your password"
+                  />
+                  <InputRightElement width="4.5rem">
+                    <Button h="1.75rem" size="sm" onClick={handleClick}>
+                      {show ? 'Hide' : 'Show'}
+                    </Button>
+                  </InputRightElement>
+                </InputGroup>
               </FormControl>
 
               <Button type="submit" colorScheme="teal" width="full" mt={4}>
