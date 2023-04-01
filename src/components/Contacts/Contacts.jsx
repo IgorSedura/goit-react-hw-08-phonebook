@@ -1,6 +1,3 @@
-// import { nanoid } from 'nanoid';
-// import { useState, useEffect } from 'react';
-
 import { FormAddContact } from './FormAddConatact/FormAddContact';
 import { PhonebookList } from './ContactBookList/ContactBookList';
 import { Container } from './ConatactsStyles';
@@ -47,7 +44,7 @@ const Contacts = () => {
     <Container>
       <FormAddContact onSubmit={onAddContact} />
       <div>
-        <Heading as="h2" size="xl">
+        <Heading as="h2" size="xl" mb={5}>
           Contacts
         </Heading>
 
