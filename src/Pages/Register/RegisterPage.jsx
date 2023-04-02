@@ -2,11 +2,25 @@ import RegisterForm from 'components/RegisterForm/registerForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { singup } from 'redux/auth/auth-operations';
 import { getAuthError } from 'redux/auth/auth-selector';
-import toast, { Toaster } from 'react-hot-toast';
+import { useToast } from '@chakra-ui/react';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
   const { status, statusText } = useSelector(getAuthError);
+
+  const toast = useToast();
+  const Click = () => {
+    if (status) {
+      toast({
+        title: 'Oops',
+        description: `${statusText}`,
+        status: 'error',
+        duration: 9000,
+        position: 'top',
+        isClosable: true,
+      });
+    }
+  };
 
   const onRegister = data => {
     dispatch(singup(data));
@@ -14,10 +28,7 @@ const RegisterPage = () => {
 
   return (
     <div>
-      <Toaster />
-      <RegisterForm onSubmit={onRegister} />
-
-      <div>{status && toast.error(`oops ${statusText}`)}</div>
+      <RegisterForm onSubmit={onRegister} onClick={Click()} />
     </div>
   );
 };
