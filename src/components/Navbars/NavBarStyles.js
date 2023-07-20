@@ -6,6 +6,7 @@ export const Header = styled.header`
   padding: 8px 0;
 
   border-bottom: 1px solid black;
+  margin-bottom: 30px;
 
   nav {
     display: flex;
